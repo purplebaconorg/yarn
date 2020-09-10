@@ -31,7 +31,7 @@
     "leven": "^2.0.0",
     "loud-rejection": "^1.2.0",
     "micromatch": "^2.3.11",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^0.5.2",
     "node-emoji": "^1.6.1",
     "normalize-url": "^2.0.0",
     "npm-logical-tree": "^1.2.1",
@@ -39,7 +39,7 @@
     "proper-lockfile": "^2.0.0",
     "puka": "^1.0.0",
     "read": "^1.0.7",
-    "request": "^2.87.0",
+    "request": "^2.88.0",
     "request-capture-har": "^1.2.2",
     "rimraf": "^2.5.0",
     "semver": "^5.1.0",
@@ -51,7 +51,8 @@
     "uuid": "^3.0.1",
     "v8-compile-cache": "^2.0.0",
     "validate-npm-package-license": "^3.0.4",
-    "yn": "^2.0.0"
+    "yn": "^2.0.0",
+    "snyk": "^1.392.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -129,7 +130,9 @@
     "test-only-debug": "node --inspect-brk --max_old_space_size=4096 node_modules/jest/bin/jest.js --runInBand --verbose",
     "test-coverage": "node --max_old_space_size=4096 node_modules/jest/bin/jest.js --coverage --verbose",
     "watch": "gulp watch",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -152,5 +155,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "snyk": true
 }
